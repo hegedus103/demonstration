@@ -1,0 +1,167 @@
+	@px-500: 500px;
+	@px-110: 110px;
+	@px-210: 210px;
+	@px-160: 160px;
+	@asztal-fugg-elvagva: 15%;
+
+	@color-border: #7894BC;
+	@color-bacgorund: #D7E5F9;
+	@color-body: #636b6f;
+	@color-tabla-body: #99BBEE;
+	@color-blue: blue;
+	@color-black: black;
+	@color-fejlec:#7894BC;
+	@color-fekete: #ffffff;
+	@color-grey: grey;
+	@color-ora: #ff0000;
+
+	@border-4px-ridge: 4px ridge @color-grey;
+	@border-2px-ridge: 2px ridge @color-grey;
+	@border-link: 5px solid @color-border;
+	@border-radius-8: 8px  8px 8px 8px; 
+	@border-1: 1px solid @color-black;
+	@border-2: 2px solid @color-black;
+
+	@backgorund-color: @color-bacgorund;
+	@fejlec-background-color: @color-fejlec;
+	@fejlec-border: @border-4px-ridge;
+	@body-color: @color-body;
+	@align-center: center;
+
+	@table-body-background-color:@color-tabla-body;
+	@table-body-color:@color-blue;
+	@table-left: 15%;
+	@table-width: auto;
+	@table-position: fixed;
+	@table-top: @px-210;
+	@table-border-collapse: collapse;
+	@table-fejlec-background: @fejlec-background-color;
+	@table-th-width: 100px;
+	@table-th-color: @color-blue;
+	@table-cancel-left: 50%;
+	@table-cancel-top: 80%;
+
+	@bevitel-dialog-width: @px-500;
+	@bevitel-dialog-margin: 0 auto;
+	@bevitel-float: @float-center;
+	@bevitel-body-background: @backgorund-color;
+	@bevitel-body-position: relative;
+	@bevitel-body-top: @px-160;
+	@bevitel-body-width: @px-500;
+	@bevitel-body-height: auto;
+	@bevitel-error-szine: red;
+	@bevitel-fejlec-position: fixed;
+	@bevitel-fejlec-background-color: @fejlec-background-color;
+	@bevitel-fejlec-color: @color-black;
+	@bevitel-fejlec-border: @fejlec-border ;
+	@bevitel-fejlec-font-size: 20px;
+	@bevitel-fejlec-padding-top: 1%;
+	@bevitel-fejlec-padding-bottom: 1%; 
+	@bevitel-fejlec-height: 50px;
+	@bevitel-fejlec-top: @px-110;
+	@bevitel-fejlec-z-index: 90;
+	@bevitel-gomb-margin-left: 30%;
+
+	@fomenu-keret-border: @fejlec-border ;
+	@fomenu-keret-z-index: 100;
+	@fomenu-keret-position: fixed;
+	@fomenu-keret-width: 100%;
+	@fomenu-keret-height: @px-110;
+	@fomenu-keret-left: 0%;
+	@fomenu-keret-top:0%;
+	@fomenu-keret-background-color: @backgorund-color;
+
+	@menu-marha: 15%;
+	@menu-display: 17%;
+	@menu-cim-font-size: 20px;
+
+	@contener-fejlec-background-color: @color-border;
+	@contener-fejlec-color: @color-black;
+	@contener-fejlec-font-size: 20px;
+	@contener-fejlec-padding-top: 2%;
+	@contener-fejlec-padding-bottom: 2%; 
+	@contener-fejlec-height: 8%;
+
+	
+	@float-center: center;
+	@font-family: 'Nunito', sans-serif;
+	@font-size1: 12px;
+	@font-size2: 14px;
+	@padding-1: 5px;
+	@padding-2: 10px;
+	@padding-3: 5%;
+	@padding-left1: 30px;
+	@text-align1: center;
+	@text-align2: left;
+	@text-align3: right;
+	@text-color: black;
+	@transition-03: border-width 0.3s linear;  
+
+	@login-gomb-left: 70%;
+	@login-gomb-top: 7vh;
+	@login-gomb-height: 2vh;
+	@login-ora-left: 60%;
+	@login-ora-top: 7vh;
+	@login-ora-height: 2vh;
+	@login-right-left: 80%;
+	@login-right-top: 7vh;
+	@login-right-height: 2vh;
+
+        
+        html, body 
+        {         
+                
+                color: @text-color;
+                font-family:@font-family;
+                font-weight: 200;
+                height: auto;
+                margin: 0;
+                background-color: @color-bacgorund;
+   		}
+
+
+.bal
+    	{
+      		position:fixed;
+      		width:15%;
+      		height: 100%;
+      		top:110px;
+      		left:0%;
+      		background-color: @backgorund-color;
+       		border: @fejlec-border;
+    	}
+
+ 
+            .full-height 
+            {
+                height: 7%;
+                width:100%;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+
+            }
+
+            .position-ref {
+                position:relative;
+            }
+
+
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+         
+ 
+ 
