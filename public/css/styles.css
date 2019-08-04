@@ -1,0 +1,333 @@
+html,
+body {
+  color: black;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  height: auto;
+  margin: 0;
+  background-color: #D7E5F9;
+}
+.bal {
+  position: fixed;
+  width: 15%;
+  height: 100%;
+  top: 110px;
+  left: 0%;
+  background-color: #D7E5F9;
+  border: 4px ridge grey;
+}
+.full-height {
+  height: 7%;
+  width: 100%;
+}
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.position-ref {
+  position: relative;
+}
+.content {
+  text-align: center;
+}
+.title {
+  font-size: 84px;
+}
+.m-b-md {
+  margin-bottom: 30px;
+}
+.kiiras-hatter {
+  background-color: transparent;
+}
+.kiiras {
+  position: fixed;
+  background-color: #D7E5F9;
+  left: 15%;
+  top: 110px;
+  height: 100%;
+  width: 150%;
+}
+.kiiras table {
+  position: fixed;
+  top: 210px;
+  float: center;
+  border-collapse: collapse;
+  color: blue;
+  width: auto;
+  left: 15%;
+  background-color: #99BBEE;
+}
+.kiiras-href {
+  color: #000000;
+}
+.kiiras-href:hover {
+  color: red;
+}
+.kiiras-fejlec {
+  height: 40px;
+  width: auto;
+  background: #7894BC;
+}
+.kiiras-fejlec th {
+  font-size: 14px;
+  width: 100px;
+  padding: 5px;
+  color: blue;
+  border: 1px solid black;
+  text-align: center;
+  height: 30px;
+  background: #7894BC;
+}
+.kiiras tr {
+  border: 1px solid black;
+  width: auto;
+  background: transparent;
+}
+.kiiras td {
+  color: blue;
+  font-size: 12px;
+  width: 100px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+  background: transparent;
+}
+.kiiras-cancel {
+  position: fixed;
+  top: 80%;
+  left: 50%;
+}
+.kiiras-bevitel {
+  position: fixed;
+  top: 80%;
+  left: 40%;
+}
+.kiiras-lapozo {
+  position: fixed;
+  top: 70%;
+  left: 40%;
+}
+.kiiras_neve {
+  position: fixed;
+  left: 35%;
+  top: 25%;
+  color: red;
+}
+.bal-menu-keret {
+  width: 15%;
+  top: 110px;
+  height: 100%;
+  background: transparent;
+}
+.navbar {
+  background: transparent;
+}
+.navbar-item a:hover {
+  text-decoration: none;
+  color: red;
+}
+.navbar-nav li a:hover {
+  text-decoration: none;
+}
+.navbar-cim {
+  font-size: 20px;
+}
+.navbar-header button a {
+  text-align: left;
+  float: left;
+  text-decoration: none;
+}
+.navbar-header button a:hover {
+  color: red;
+}
+.login-contener-body {
+  background-color: #D7E5F9;
+  border: 4px ridge grey;
+}
+.login-contener-fejlec {
+  background-color: #7894BC;
+  color: black;
+  text-align: center;
+  border: 4px ridge grey;
+  font-size: 20px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  height: 8%;
+}
+.login-content-align {
+  align-content: center;
+}
+.login-kulso {
+  width: 50%;
+  top: 20%;
+}
+.login-top-pos {
+  position: fixed;
+  width: 40%;
+  top: 20%;
+  left: 30%;
+}
+.fomenu-user {
+  position: absolute;
+  left: 40%;
+  top: 7vh;
+  height: 2vh;
+  background: transparent;
+  color: #7894BC;
+}
+.fomenu-user a {
+  color: #7894BC;
+  padding: 5px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: transparent;
+  margin-right: 15px;
+}
+.fomenu-user a:hover {
+  border: 5px solid #7894BC;
+  border-radius: 8px 8px 8px 8px;
+  text-decoration: none;
+  transition: border-width 0.3s linear;
+}
+.time_kilepes {
+  position: absolute;
+  right: 100px;
+  top: 7vh;
+}
+.fomenu-login-gomb {
+  position: absolute;
+  left: 70%;
+  top: 7vh;
+  height: 2vh;
+}
+.fomenu-login-ora {
+  position: absolute;
+  left: 60%;
+  top: 7vh;
+  height: 2vh;
+  background: transparent;
+}
+.fomenu-login-right {
+  position: absolute;
+  left: 80%;
+  top: 7vh;
+  height: 2vh;
+}
+.fomenu-login-right a {
+  text-decoration: none;
+}
+.fomenu-links a {
+  color: #7894BC;
+  padding: 5px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: transparent;
+  margin-right: 15px;
+}
+.fomenu-links a:hover {
+  border: 5px solid #7894BC;
+  border-radius: 8px 8px 8px 8px;
+  text-decoration: none;
+  transition: border-width 0.3s linear;
+}
+#minutes {
+  padding: 5px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 15%;
+  height: 10%;
+  background: transparent;
+  margin-right: 20px;
+  color: #ff0000;
+}
+#minutes:hover {
+  border: 5px solid #7894BC;
+  border-radius: 8px 8px 8px 8px;
+  transition: border-width 0.3s linear;
+}
+.fomenu-plakatimage img {
+  position: absolute;
+  left: 1%;
+  top: 3%;
+  width: 30%;
+  background: transparent;
+}
+.foimage-asztal img {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 85%;
+  height: 85%;
+  background-color: #D7E5F9;
+  border: 2px ridge grey;
+}
+.foimage img {
+  position: absolute;
+  top: 15%;
+  left: 0%;
+  width: 100%;
+  height: 85%;
+}
+.bevitelhatter-height {
+  height: 100%;
+}
+.bevitel-dialog {
+  width: 500px;
+  margin: 0 auto;
+  float: center;
+}
+.bevitel-body {
+  background-color: #D7E5F9;
+  padding-left: 30px;
+  height: auto;
+  padding-top: 5px;
+  padding-left: 5%;
+  position: relative;
+  top: 160px;
+  width: 500px;
+  float: center;
+}
+.bevitel-error-szine {
+  color: red;
+}
+.bevitel-fejlec {
+  position: fixed;
+  background-color: #7894BC;
+  color: black;
+  text-align: center;
+  border: 4px ridge grey;
+  font-size: 20px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  height: 50px;
+  top: 110px;
+  float: center;
+  z-index: 90;
+  width: 500px;
+  margin: 0 auto;
+}
+.bevitel-nyomogomb {
+  position: relative;
+  margin-left: 30%;
+}
+.fomenu-keret {
+  border: 4px ridge grey;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  height: 110px;
+  top: 0%;
+  left: 0%;
+  background-color: #D7E5F9;
+  border: 2px ridge grey ;
+}
