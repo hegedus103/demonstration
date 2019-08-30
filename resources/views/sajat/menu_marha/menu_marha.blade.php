@@ -1,3 +1,4 @@
+
 <div class="bal-menu-keret">
 <div class="menu-marha">
 <nav class="navbar navbar-default" role="navigation">
@@ -9,7 +10,6 @@
       </button>
      
     </div-->
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav ">
@@ -20,8 +20,10 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-</div>
+
+
 <div id="app">
 <sidebarmenu></sidebarmenu>
 </div>
 </div>
+

@@ -7,7 +7,6 @@
 
 @section('content')
 @include('sajat.menu_marha.menu_marha')
-
 @endsection
 
 @section('hatter')
