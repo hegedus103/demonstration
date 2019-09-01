@@ -1688,10 +1688,62 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/Flash.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/marhatorzs/Flash.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['message'],
+  data: function data() {
+    return {
+      show: false,
+      body: ''
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    if (this.message) {
+      this.flash(this.message);
+    }
+
+    window.events.$on('flash', function (message) {
+      return _this.flash(message);
+    });
+  },
+  methods: {
+    flash: function flash(message) {
+      var _this2 = this;
+
+      this.show = true;
+      this.body = message;
+      setTimeout(function () {
+        _this2.hide();
+      }, 3000);
+    },
+    hide: function hide() {
+      this.show = false;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1713,10 +1765,1159 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
+  },
+  props: ['route', 'home'],
+  data: function data() {
+    return {
+      AllatokMarha: {
+        enarszam: '',
+        neve: '',
+        neme: 'noivaru',
+        szuletes_datuma: this.getdatum(),
+        bekerult: this.getdatum(),
+        fajta: 'magyartarka',
+        szine: 'vorostarka',
+        anya_enarszam: '',
+        anya_neve: '',
+        jarlat_sorszam: '',
+        jarlat_kiadasa: this.getdatum(),
+        szarmazas_tenyeszet: ''
+      },
+      validations: {
+        eredmeny: {
+          is_valid: true
+        },
+        enarszam: {
+          is_valid: true,
+          text: ''
+        },
+        neve: {
+          is_valid: true,
+          text: ''
+        },
+        neme: {
+          is_valid: true,
+          text: ''
+        },
+        szuletes_datuma: {
+          is_valid: true,
+          text: ''
+        },
+        bekerult: {
+          is_valid: true,
+          text: ''
+        },
+        fajta: {
+          is_valid: true,
+          text: ''
+        },
+        szine: {
+          is_valid: true,
+          text: ''
+        },
+        anya_enarszam: {
+          is_valid: true,
+          text: ''
+        },
+        anya_neve: {
+          is_valid: true,
+          text: ''
+        },
+        jarlat_sorszam: {
+          is_valid: true,
+          text: ''
+        },
+        jarlat_kiadasa: {
+          is_valid: true,
+          text: ''
+        },
+        szarmazas_tenyeszet: {
+          is_valid: true,
+          text: ''
+        }
+      },
+      //--------------------- 
+      output: ''
+    };
+  },
+  methods: {
+    CancelMarhatorzsBevitel: function CancelMarhatorzsBevitel(event) {
+      //alert('Bejott a cancel clickbe');
+      if (event) {
+        //alert(event.target.tagName + "Lenyomtad a cancelt Clicked ");
+        window.location.href = this.route;
+      }
+    },
+    validalasmarha: function validalasmarha(honnan) {
+      // alert('elindult a validatenewCafe');
+      //let validNewCafeForm = true;
+      var valideredmeny = true;
+      this.validations.eredmeny = true;
+      if (honnan != 'postbol') return true; //---------------------------------------
+
+      if (this.AllatokMarha.enarszam.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.enarszam.is_valid = false;
+        this.validations.enarszam.text = 'Az enarszám nem lehet üres !';
+      } else if (!this.AllatokMarha.enarszam.match(/^([0-9]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.enarszam.is_valid = false;
+        this.validations.enarszam.text = 'Az enarszám csak szám lehet!'; //return valideredmeny;
+      } else if (this.AllatokMarha.enarszam.length != 10) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.enarszam.is_valid = false;
+        this.validations.enarszam.text = 'Az enarszám pontosan 10 jegyű kell legyen!';
+      } else {
+        this.validations.enarszam.is_valid = true;
+        this.validations.enarszam.text = '';
+      } //-----------------------------------------------------
+
+
+      if (this.AllatokMarha.neve.trim() == '') {
+        if (this.validations.enarszam.is_valid == true) {
+          var modositas = document.getElementById("neve");
+
+          if (modositas) {
+            modositas.value = this.AllatokMarha.enarszam;
+            this.AllatokMarha.neve = this.AllatokMarha.enarszam;
+            this.validations.neve.is_valid = true;
+            this.validations.neve.text = ''; //alert('erteket adtam a nevenek');
+          } //else alert('objectum hiba a nevenel'); 
+
+        }
+      } else if (!this.AllatokMarha.neve.match(/^([A-ZaáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰa-z0-9_ ]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.neve.is_valid = false;
+        this.validations.neve.text = 'A neve nem tartalmazhat különleges elemeket!'; //return valideredmeny;
+      } else {
+        this.validations.neve.is_valid = true;
+        this.validations.neve.text = '';
+      } //--------------------------------------------------
+
+
+      if (this.AllatokMarha.neme.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.neme.is_valid = false;
+        this.validations.neme.text = 'A neme nem lehet üres !';
+      } else if (this.AllatokMarha.neme != 'noivaru' && this.AllatokMarha.neme != 'himivaru') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.neme.is_valid = false;
+        this.validations.neme.text = 'A neme nem megfelelő!';
+      } else {
+        this.validations.neme.is_valid = true;
+        this.validations.neme.text = '';
+      } //--------------------------------------------------
+
+
+      if (this.AllatokMarha.szuletes_datuma.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.szuletes_datuma.is_valid = false;
+        this.validations.szuletes_datuma.text = 'A szuletes dátuma nem lehet üres !';
+      } else if (this.AllatokMarha.szuletes_datuma == '1000-01-01') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.szuletes_datuma.is_valid = false;
+        this.validations.szuletes_datuma.text = 'A születés dátumát ki kell jelölnie!';
+      } else {
+        this.validations.szuletes_datuma.is_valid = true;
+        this.validations.szuletes_datuma.text = '';
+      } //------------------------------------------------------
+
+
+      if (this.AllatokMarha.bekerult.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.bekerult.is_valid = false;
+        this.validations.bekerult.text = 'A bekerülés dátuma nem lehet üres !';
+      } else if (this.AllatokMarha.bekerult == '1000-01-01') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.bekerult.is_valid = false;
+        this.validations.bekerult.text = 'A bekerülés dátumát ki kell jelölnie!';
+      } else {
+        this.validations.bekerult.is_valid = true;
+        this.validations.bekerult.text = '';
+      } //------------------------------------------------------------
+
+
+      if (this.AllatokMarha.anya_enarszam.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.anya_enarszam.is_valid = false;
+        this.validations.anya_enarszam.text = 'Az anya enarszám nem lehet üres!';
+      } else if (!this.AllatokMarha.anya_enarszam.match(/^([0-9]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.anya_enarszam.is_valid = false;
+        this.validations.anya_enarszam.text = 'Az anya enarszám csak szám lehet!'; //return valideredmeny;
+      } else if (this.AllatokMarha.anya_enarszam.length != 10) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.anya_enarszam.is_valid = false;
+        this.validations.anya_enarszam.text = 'Az anya_enarszám pontosan 10 jegyű kell legyen!';
+      } else {
+        this.validations.anya_enarszam.is_valid = true;
+        this.validations.anya_enarszam.text = '';
+      } //-----------------------------------------------------
+
+
+      if (this.AllatokMarha.anya_neve.trim() == '') {
+        if (this.validations.anya_enarszam.is_valid == true) {
+          var modositas = document.getElementById("anya_neve");
+
+          if (modositas) {
+            modositas.value = this.AllatokMarha.anya_enarszam;
+            this.AllatokMarha.anya_neve = this.AllatokMarha.anya_enarszam;
+            this.validations.anya_neve.is_valid = true;
+            this.validations.anya_neve.text = ''; //alert('erteket adtam a nevenek');
+          } //else alert('objectum hiba a nevenel'); 
+
+        }
+      } else if (!this.AllatokMarha.anya_neve.match(/^([A-ZaáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰa-z0-9_ ]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.anya_neve.is_valid = false;
+        this.validations.anya_neve.text = 'Az anya neve nem tartalmazhat különleges elemeket!'; //return valideredmeny;
+      } else {
+        this.validations.anya_neve.is_valid = true;
+        this.validations.anya_neve.text = '';
+      } //--------------------------------------------------------------
+
+
+      if (this.AllatokMarha.jarlat_sorszam.trim() == '') {
+        valideredmeny = false;
+        this.validations.jarlat_sorszam.is_valid = false;
+        this.validations.jarlat_sorszam.text = 'A jarlat sorszam nem lehet üres!';
+      } else if (!this.AllatokMarha.jarlat_sorszam.match(/^([A-ZaáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰa-z0-9_ ]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.jarlat_sorszam.is_valid = false;
+        this.validations.jarlat_sorszam.text = 'A jarlat sorszam nem tartalmazhat különleges elemeket!'; //return valideredmeny;
+      } else {
+        this.validations.jarlat_sorszam.is_valid = true;
+        this.validations.jarlat_sorszam.text = '';
+      } //------------------------------------------------------
+
+
+      if (this.AllatokMarha.jarlat_kiadasa.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.jarlat_kiadasa.is_valid = false;
+        this.validations.jarlat_kiadasa.text = 'A jarlat kiadasa dátuma nem lehet üres !';
+      } else if (this.AllatokMarha.jarlat_kiadasa == '1000-01-01') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.jarlat_kiadasa.is_valid = false;
+        this.validations.jarlat_kiadasa.text = 'A jarlat kiadasa dátumát ki kell jelölnie!';
+      } else {
+        this.validations.jarlat_kiadasa.is_valid = true;
+        this.validations.jarlat_kiadasa.text = '';
+      } //--------------------------------------------------------------
+
+
+      if (this.AllatokMarha.szarmazas_tenyeszet.trim() == '') {
+        valideredmeny = false;
+        this.validations.szarmazas_tenyeszet.is_valid = false;
+        this.validations.szarmazas_tenyeszet.text = 'A szarmazas tenyeszet nem lehet üres!';
+      } else if (!this.AllatokMarha.szarmazas_tenyeszet.match(/^([A-ZaáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰa-z0-9_ ]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.szarmazas_tenyeszet.is_valid = false;
+        this.validations.szarmazas_tenyeszet.text = 'A szarmazas tenyeszet nem tartalmazhat különleges elemeket!'; //return valideredmeny;
+      } else {
+        this.validations.szarmazas_tenyeszet.is_valid = true;
+        this.validations.szarmazas_tenyeszet.text = '';
+      } //----------------------------------------------------
+      // return validNewCafeForm;
+
+
+      this.validations.eredmeny = valideredmeny; // return true;
+
+      return valideredmeny;
+    },
+    //------------------------------------------------------          
+    getdatum: function getdatum() {
+      //flash('Sikerült az adatbevitel.', 'success');
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+
+      var yyyy = today.getFullYear(); //today = mm + '-' + dd + '-' + yyyy;
+
+      today = yyyy + '-' + dd + '-' + mm;
+      return today;
+    },
+    //-----------------------------------------------------------
+    formSubmit: function formSubmit(e) {
+      var _this = this;
+
+      // alert('bejott a submitba');
+      e.preventDefault();
+      var currentObj = this; //  
+
+      if (this.validalasmarha('postbol')) {
+        // alert('a post elott');
+        axios.post('marha_torzs_create', {
+          enarszam: this.AllatokMarha.enarszam,
+          neve: this.AllatokMarha.neve,
+          neme: this.AllatokMarha.neme,
+          szuletes_datuma: this.AllatokMarha.szuletes_datuma,
+          bekerult: this.AllatokMarha.bekerult,
+          fajta: this.AllatokMarha.fajta,
+          szine: this.AllatokMarha.szine,
+          anya_enarszam: this.AllatokMarha.anya_enarszam,
+          anya_neve: this.AllatokMarha.anya_neve,
+          jarlat_sorszam: this.AllatokMarha.jarlat_sorszam,
+          jarlat_kiadasa: this.AllatokMarha.jarlat_kiadasa,
+          szarmazas_tenyeszet: this.AllatokMarha.szarmazas_tenyeszet
+        }) // vege a postnak
+        .then(function (response) {
+          currentObj.output = response.data;
+          if (response.data.error !== 'undefined') if (response.data.error == false) {
+            flash('Sikerült az adatbevitel.', 'success');
+            setTimeout(function () {
+              window.location.href = _this.route;
+            }, 3000);
+          }
+
+          if (response.data.error == true) {
+            var oka = 'Az adatbevitel meghiusult';
+            if (typeof response.data.message !== 'undefined') oka = response.data.message;
+            flash(oka, 'success');
+            setTimeout(function () {
+              window.location.href = _this.home;
+            }, 3000);
+          }
+        })["catch"](function (error) {
+          console.log(error.response);
+
+          if (error.response.status == 422) {
+            var SajatErrors = error.response.data.errors; //currentObj.output =SajatErrors;
+            //----------------------------------------
+
+            if (typeof SajatErrors.enarszam !== 'undefined') if (SajatErrors.enarszam[0].length > 0) {
+              _this.validations.enarszam.is_valid = false;
+              _this.validations.enarszam.text = SajatErrors.enarszam[0];
+              _this.validations.eredmeny = false;
+            } // vege ha enarszam
+
+            if (typeof SajatErrors.neve !== 'undefined') if (SajatErrors.neve[0].length > 0) {
+              _this.validations.neve.is_valid = false;
+              _this.validations.neve[0].text = SajatErrors.neve[0];
+              _this.validations.eredmeny = false;
+            } // vege ha neve
+
+            if (typeof SajatErrors.neme !== 'undefined') if (SajatErrors.neme[0].length > 0) {
+              _this.validations.neme.is_valid = false;
+              _this.validations.neme.text = SajatErrors.neme[0];
+              _this.validations.eredmeny = false;
+            } // vege ha neme
+
+            if (typeof SajatErrors.szuletes_datuma !== 'undefined') if (SajatErrors.szuletes_datuma[0].length > 0) {
+              _this.validations.szuletes_datuma.is_valid = false;
+              _this.validations.szuletes_datuma.text = SajatErrors.szuletes_datuma[0];
+              _this.validations.eredmeny = false;
+            } // vege ha szuletes_datuma
+
+            if (typeof SajatErrors.bekerult !== 'undefined') if (SajatErrors.bekerult[0].length > 0) {
+              _this.validations.bekerult.is_valid = false;
+              _this.validations.bekerult.text = SajatErrors.bekerult[0];
+              _this.validations.eredmeny = false;
+            } // vege ha bekerult
+
+            if (typeof SajatErrors.fajta !== 'undefined') if (SajatErrors.fajta[0].length > 0) {
+              _this.validations.fajta.is_valid = false;
+              _this.validations.fajta.text = SajatErrors.fajta[0];
+              _this.validations.eredmeny = false;
+            } // vege ha fajta
+
+            if (typeof SajatErrors.szine !== 'undefined') if (SajatErrors.szine[0].length > 0) {
+              _this.validations.szine.is_valid = false;
+              _this.validations.szine.text = SajatErrors.szine[0];
+              _this.validations.eredmeny = false;
+            } // vege ha szine
+
+            if (typeof SajatErrors.anya_enarszam !== 'undefined') if (SajatErrors.anya_enarszam[0].length > 0) {
+              _this.validations.anya_enarszam.is_valid = false;
+              _this.validations.anya_enarszam.text = SajatErrors.anya_enarszam[0];
+              _this.validations.eredmeny = false;
+            } // vege ha anya_enarszam
+
+            if (typeof SajatErrors.anya_neve !== 'undefined') if (SajatErrors.anya_neve.length > 0) {
+              _this.validations.anya_neve.is_valid = false;
+              _this.validations.anya_neve.text = SajatErrors.anya_neve[0];
+              _this.validations.eredmeny = false;
+            } // vege ha anya_neve
+
+            if (typeof SajatErrors.jarlat_sorszam !== 'undefined') if (SajatErrors.jarlat_sorszam[0].length > 0) {
+              _this.validations.jarlat_sorszam.is_valid = false;
+              _this.validations.jarlat_sorszam.text = SajatErrors.jarlat_sorszam[0];
+              _this.validations.eredmeny = false;
+            } // vege ha jarlat_sorszam
+
+            if (typeof SajatErrors.jarlat_kiadasa !== 'undefined') if (SajatErrors.jarlat_kiadasa[0].length > 0) {
+              _this.validations.jarlat_kiadasa.is_valid = false;
+              _this.validations.jarlat_kiadasa.text = SajatErrors.jarlat_kiadasa[0];
+              _this.validations.eredmeny = false;
+            } // vege ha jarlat_kiadasa
+
+            if (typeof SajatErrors.szarmazas_tenyeszet !== 'undefined') if (SajatErrors.szarmazas_tenyeszet[0].length > 0) {
+              _this.validations.szarmazas_tenyeszet.is_valid = false;
+              _this.validations.szarmazas_tenyeszet.text = SajatErrors.szarmazas_tenyeszet[0];
+              _this.validations.eredmeny = false;
+            } // vege ha enarszam
+            //-----------------------------------------------     
+            //e.target.reset();      
+          } // vege ha a response status==422
+          //alert('A visszakapott uzenet:'+this.error);
+
+        }); //vege a catcnek 
+      } // vege a  if( this.validalasmarha('postbol') )         
+      //else alert('a validate false:'+this.validations.enarszam.text );
+      //
+
+    }
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  },
+  props: ['route', 'home', 'id', 'allatokmarha', 'getroute', 'getupdate'],
+  data: function data() {
+    return {
+      AllatokMarha: {
+        enarszam: '',
+        neve: '',
+        neme: '',
+        szuletes_datuma: '',
+        bekerult: '',
+        fajta: '',
+        szine: '',
+        anya_enarszam: '',
+        anya_neve: '',
+        jarlat_sorszam: '',
+        jarlat_kiadasa: '',
+        szarmazas_tenyeszet: ''
+      },
+      ertekadas: this.getcomponent(),
+      validations: {
+        eredmeny: {
+          is_valid: true
+        },
+        enarszam: {
+          is_valid: true,
+          text: ''
+        },
+        neve: {
+          is_valid: true,
+          text: ''
+        },
+        neme: {
+          is_valid: true,
+          text: ''
+        },
+        szuletes_datuma: {
+          is_valid: true,
+          text: ''
+        },
+        bekerult: {
+          is_valid: true,
+          text: ''
+        },
+        fajta: {
+          is_valid: true,
+          text: ''
+        },
+        szine: {
+          is_valid: true,
+          text: ''
+        },
+        anya_enarszam: {
+          is_valid: true,
+          text: ''
+        },
+        anya_neve: {
+          is_valid: true,
+          text: ''
+        },
+        jarlat_sorszam: {
+          is_valid: true,
+          text: ''
+        },
+        jarlat_kiadasa: {
+          is_valid: true,
+          text: ''
+        },
+        szarmazas_tenyeszet: {
+          is_valid: true,
+          text: ''
+        }
+      },
+      //--------------------- 
+      output: ''
+    };
+  },
+  methods: {
+    getcomponent: function getcomponent() {
+      var _this = this;
+
+      var currentObject = this; // alert('  a lekert  :'+this.getroute);
+
+      axios.get(this.getroute).then(function (response) {
+        currentObject.output = response.data; // this.items = response.data;
+
+        _this.AllatokMarha.enarszam = response.data[0]['enarszam'];
+        _this.AllatokMarha.neve = response.data[0]['neve'];
+        _this.AllatokMarha.neme = response.data[0]['neme'];
+        _this.AllatokMarha.szuletes_datuma = response.data[0]['szuletes_datuma'];
+        _this.AllatokMarha.bekerult = response.data[0]['bekerult'];
+        _this.AllatokMarha.fajta = response.data[0]['fajta'];
+        _this.AllatokMarha.szine = response.data[0]['szine'];
+        _this.AllatokMarha.anya_enarszam = response.data[0]['anya_enarszam'];
+        _this.AllatokMarha.anya_neve = response.data[0]['anya_neve'];
+        _this.AllatokMarha.jarlat_sorszam = response.data[0]['jarlat_sorszam'];
+        _this.AllatokMarha.jarlat_kiadasa = response.data[0]['jarlat_kiadasa'];
+        _this.AllatokMarha.szarmazas_tenyeszet = response.data[0]['szarmazas_tenyeszet']; //alert('a lekert enarszam:'+this.items[0]['enarszam']);
+      })["catch"](function (response) {// Error Handling
+      });
+    },
+    CancelMarhatorzsUpdate: function CancelMarhatorzsUpdate() {
+      window.location.href = this.route;
+    },
+    //-----------------------------------------------------------------------
+    //-------------------------------------------------------------
+    validalasmarha: function validalasmarha(honnan) {
+      // alert('elindult a validatenewCafe');
+      //let validNewCafeForm = true;
+      var valideredmeny = true;
+      this.validations.eredmeny = true;
+      if (honnan != 'postbol') return true; //---------------------------------------
+
+      if (this.AllatokMarha.enarszam.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.enarszam.is_valid = false;
+        this.validations.enarszam.text = 'Az enarszám nem lehet üres !';
+      } else if (!this.AllatokMarha.enarszam.match(/^([0-9]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.enarszam.is_valid = false;
+        this.validations.enarszam.text = 'Az enarszám csak szám lehet!'; //return valideredmeny;
+      } else if (this.AllatokMarha.enarszam.length != 10) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.enarszam.is_valid = false;
+        this.validations.enarszam.text = 'Az enarszám pontosan 10 jegyű kell legyen!';
+      } else {
+        this.validations.enarszam.is_valid = true;
+        this.validations.enarszam.text = '';
+      } //-----------------------------------------------------
+
+
+      if (this.AllatokMarha.neve.trim() == '') {
+        if (this.validations.enarszam.is_valid == true) {
+          var modositas = document.getElementById("neve");
+
+          if (modositas) {
+            modositas.value = this.AllatokMarha.enarszam;
+            this.AllatokMarha.neve = this.AllatokMarha.enarszam;
+            this.validations.neve.is_valid = true;
+            this.validations.neve.text = ''; //alert('erteket adtam a nevenek');
+          } //else alert('objectum hiba a nevenel'); 
+
+        }
+      } else if (!this.AllatokMarha.neve.match(/^([A-ZaáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰa-z0-9_ ]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.neve.is_valid = false;
+        this.validations.neve.text = 'A neve nem tartalmazhat különleges elemeket!'; //return valideredmeny;
+      } else {
+        this.validations.neve.is_valid = true;
+        this.validations.neve.text = '';
+      } //--------------------------------------------------
+
+
+      if (this.AllatokMarha.neme.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.neme.is_valid = false;
+        this.validations.neme.text = 'A neme nem lehet üres !';
+      } else if (this.AllatokMarha.neme != 'noivaru' && this.AllatokMarha.neme != 'himivaru') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.neme.is_valid = false;
+        this.validations.neme.text = 'A neme nem megfelelő!';
+      } else {
+        this.validations.neme.is_valid = true;
+        this.validations.neme.text = '';
+      } //--------------------------------------------------
+
+
+      if (this.AllatokMarha.szuletes_datuma.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.szuletes_datuma.is_valid = false;
+        this.validations.szuletes_datuma.text = 'A szuletes dátuma nem lehet üres !';
+      } else if (this.AllatokMarha.szuletes_datuma == '1000-01-01') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.szuletes_datuma.is_valid = false;
+        this.validations.szuletes_datuma.text = 'A születés dátumát ki kell jelölnie!';
+      } else {
+        this.validations.szuletes_datuma.is_valid = true;
+        this.validations.szuletes_datuma.text = '';
+      } //------------------------------------------------------
+
+
+      if (this.AllatokMarha.bekerult.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.bekerult.is_valid = false;
+        this.validations.bekerult.text = 'A bekerülés dátuma nem lehet üres !';
+      } else if (this.AllatokMarha.bekerult == '1000-01-01') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.bekerult.is_valid = false;
+        this.validations.bekerult.text = 'A bekerülés dátumát ki kell jelölnie!';
+      } else {
+        this.validations.bekerult.is_valid = true;
+        this.validations.bekerult.text = '';
+      } //------------------------------------------------------------
+
+
+      if (this.AllatokMarha.anya_enarszam.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.anya_enarszam.is_valid = false;
+        this.validations.anya_enarszam.text = 'Az anya enarszám nem lehet üres!';
+      } else if (!this.AllatokMarha.anya_enarszam.match(/^([0-9]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.anya_enarszam.is_valid = false;
+        this.validations.anya_enarszam.text = 'Az anya enarszám csak szám lehet!'; //return valideredmeny;
+      } else if (this.AllatokMarha.anya_enarszam.length != 10) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.anya_enarszam.is_valid = false;
+        this.validations.anya_enarszam.text = 'Az anya_enarszám pontosan 10 jegyű kell legyen!';
+      } else {
+        this.validations.anya_enarszam.is_valid = true;
+        this.validations.anya_enarszam.text = '';
+      } //-----------------------------------------------------
+
+
+      if (this.AllatokMarha.anya_neve.trim() == '') {
+        if (this.validations.anya_enarszam.is_valid == true) {
+          var modositas = document.getElementById("anya_neve");
+
+          if (modositas) {
+            modositas.value = this.AllatokMarha.anya_enarszam;
+            this.AllatokMarha.anya_neve = this.AllatokMarha.anya_enarszam;
+            this.validations.anya_neve.is_valid = true;
+            this.validations.anya_neve.text = ''; //alert('erteket adtam a nevenek');
+          } //else alert('objectum hiba a nevenel'); 
+
+        }
+      } else if (!this.AllatokMarha.anya_neve.match(/^([A-ZaáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰa-z0-9_ ]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.anya_neve.is_valid = false;
+        this.validations.anya_neve.text = 'Az anya neve nem tartalmazhat különleges elemeket!'; //return valideredmeny;
+      } else {
+        this.validations.anya_neve.is_valid = true;
+        this.validations.anya_neve.text = '';
+      } //--------------------------------------------------------------
+
+
+      if (this.AllatokMarha.jarlat_sorszam.trim() == '') {
+        valideredmeny = false;
+        this.validations.jarlat_sorszam.is_valid = false;
+        this.validations.jarlat_sorszam.text = 'A jarlat sorszam nem lehet üres!';
+      } else if (!this.AllatokMarha.jarlat_sorszam.match(/^([A-ZaáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰa-z0-9_ ]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.jarlat_sorszam.is_valid = false;
+        this.validations.jarlat_sorszam.text = 'A jarlat sorszam nem tartalmazhat különleges elemeket!'; //return valideredmeny;
+      } else {
+        this.validations.jarlat_sorszam.is_valid = true;
+        this.validations.jarlat_sorszam.text = '';
+      } //------------------------------------------------------
+
+
+      if (this.AllatokMarha.jarlat_kiadasa.trim() == '') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.jarlat_kiadasa.is_valid = false;
+        this.validations.jarlat_kiadasa.text = 'A jarlat kiadasa dátuma nem lehet üres !';
+      } else if (this.AllatokMarha.jarlat_kiadasa == '1000-01-01') {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.jarlat_kiadasa.is_valid = false;
+        this.validations.jarlat_kiadasa.text = 'A jarlat kiadasa dátumát ki kell jelölnie!';
+      } else {
+        this.validations.jarlat_kiadasa.is_valid = true;
+        this.validations.jarlat_kiadasa.text = '';
+      } //--------------------------------------------------------------
+
+
+      if (this.AllatokMarha.szarmazas_tenyeszet.trim() == '') {
+        valideredmeny = false;
+        this.validations.szarmazas_tenyeszet.is_valid = false;
+        this.validations.szarmazas_tenyeszet.text = 'A szarmazas tenyeszet nem lehet üres!';
+      } else if (!this.AllatokMarha.szarmazas_tenyeszet.match(/^([A-ZaáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰa-z0-9_ ]+)$/)) {
+        //validNewCafeForm = false;
+        valideredmeny = false;
+        this.validations.szarmazas_tenyeszet.is_valid = false;
+        this.validations.szarmazas_tenyeszet.text = 'A szarmazas tenyeszet nem tartalmazhat különleges elemeket!'; //return valideredmeny;
+      } else {
+        this.validations.szarmazas_tenyeszet.is_valid = true;
+        this.validations.szarmazas_tenyeszet.text = '';
+      } //----------------------------------------------------
+      // return validNewCafeForm;
+
+
+      this.validations.eredmeny = valideredmeny; // return true;
+
+      return valideredmeny;
+    },
+    //-----------------------------------------------------------
+    formUpdate: function formUpdate(e) {
+      var _this2 = this;
+
+      // alert('bejott a submitba');
+      e.preventDefault(); //let currentObj = this;
+
+      if (this.validalasmarha('postbol')) {
+        // alert('a post elott');
+        axios.put(this.getupdate, {
+          enarszam: this.AllatokMarha.enarszam,
+          neve: this.AllatokMarha.neve,
+          neme: this.AllatokMarha.neme,
+          szuletes_datuma: this.AllatokMarha.szuletes_datuma,
+          bekerult: this.AllatokMarha.bekerult,
+          fajta: this.AllatokMarha.fajta,
+          szine: this.AllatokMarha.szine,
+          anya_enarszam: this.AllatokMarha.anya_enarszam,
+          anya_neve: this.AllatokMarha.anya_neve,
+          jarlat_sorszam: this.AllatokMarha.jarlat_sorszam,
+          jarlat_kiadasa: this.AllatokMarha.jarlat_kiadasa,
+          szarmazas_tenyeszet: this.AllatokMarha.szarmazas_tenyeszet,
+          id: this.id
+        }) // vege a postnak
+        .then(function (response) {
+          //currentObj.output = response.data;
+          if (response.data.error !== 'undefined') if (response.data.error == false) {
+            flash('Sikerült a modositas.', 'success');
+            setTimeout(function () {
+              window.location.href = _this2.route;
+            }, 3000);
+          }
+
+          if (response.data.error == true) {
+            var oka = 'A modositas meghiusult';
+            if (typeof response.data.message !== 'undefined') oka = response.data.message;
+            flash(oka, 'success');
+            setTimeout(function () {
+              window.location.href = _this2.home;
+            }, 3000);
+          }
+        })["catch"](function (error) {
+          console.log(error.response); // currentObj.output = error.response.data;
+
+          if (error.response.status == 422) {
+            var SajatErrors = error.response.data.errors; //currentObj.output =SajatErrors;
+            //----------------------------------------
+
+            if (typeof SajatErrors.enarszam !== 'undefined') if (SajatErrors.enarszam[0].length > 0) {
+              _this2.validations.enarszam.is_valid = false;
+              _this2.validations.enarszam.text = SajatErrors.enarszam[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha enarszam
+
+            if (typeof SajatErrors.neve !== 'undefined') if (SajatErrors.neve[0].length > 0) {
+              _this2.validations.neve.is_valid = false;
+              _this2.validations.neve.text = SajatErrors.neve[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha neve
+
+            if (typeof SajatErrors.neme !== 'undefined') if (SajatErrors.neme[0].length > 0) {
+              _this2.validations.neme.is_valid = false;
+              _this2.validations.neme.text = SajatErrors.neme[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha neme
+
+            if (typeof SajatErrors.szuletes_datuma !== 'undefined') if (SajatErrors.szuletes_datuma[0].length > 0) {
+              _this2.validations.szuletes_datuma.is_valid = false;
+              _this2.validations.szuletes_datuma.text = SajatErrors.szuletes_datuma[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha szuletes_datuma
+
+            if (typeof SajatErrors.bekerult !== 'undefined') if (SajatErrors.bekerult[0].length > 0) {
+              _this2.validations.bekerult.is_valid = false;
+              _this2.validations.bekerult.text = SajatErrors.bekerult[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha bekerult
+
+            if (typeof SajatErrors.fajta !== 'undefined') if (SajatErrors.fajta[0].length > 0) {
+              _this2.validations.fajta.is_valid = false;
+              _this2.validations.fajta.text = SajatErrors.fajta[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha fajta
+
+            if (typeof SajatErrors.szine !== 'undefined') if (SajatErrors.szine[0].length > 0) {
+              _this2.validations.szine.is_valid = false;
+              _this2.validations.szine.text = SajatErrors.szine[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha szine
+
+            if (typeof SajatErrors.anya_enarszam !== 'undefined') if (SajatErrors.anya_enarszam[0].length > 0) {
+              _this2.validations.anya_enarszam.is_valid = false;
+              _this2.validations.anya_enarszam.text = SajatErrors.anya_enarszam[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha anya_enarszam
+
+            if (typeof SajatErrors.anya_neve !== 'undefined') if (SajatErrors.anya_neve.length > 0) {
+              _this2.validations.anya_neve.is_valid = false;
+              _this2.validations.anya_neve.text = SajatErrors.anya_neve[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha anya_neve
+
+            if (typeof SajatErrors.jarlat_sorszam !== 'undefined') if (SajatErrors.jarlat_sorszam[0].length > 0) {
+              _this2.validations.jarlat_sorszam.is_valid = false;
+              _this2.validations.jarlat_sorszam.text = SajatErrors.jarlat_sorszam[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha jarlat_sorszam
+
+            if (typeof SajatErrors.jarlat_kiadasa !== 'undefined') if (SajatErrors.jarlat_kiadasa[0].length > 0) {
+              _this2.validations.jarlat_kiadasa.is_valid = false;
+              _this2.validations.jarlat_kiadasa.text = SajatErrors.jarlat_kiadasa[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha jarlat_kiadasa
+
+            if (typeof SajatErrors.szarmazas_tenyeszet !== 'undefined') if (SajatErrors.szarmazas_tenyeszet[0].length > 0) {
+              _this2.validations.szarmazas_tenyeszet.is_valid = false;
+              _this2.validations.szarmazas_tenyeszet.text = SajatErrors.szarmazas_tenyeszet[0];
+              _this2.validations.eredmeny = false;
+            } // vege ha enarszam
+            //-----------------------------------------------     
+            //e.target.reset();      
+          } // vege ha a response status==422
+          //alert('A visszakapott uzenet:'+this.error);
+
+        }); //vege a catcnek 
+      } // vege a  if( this.validalasmarha('postbol') )         
+      //else alert('a validate false:'+this.validations.enarszam.text );
+      //
+
+    }
+  } //------------------------------------------------------          
+  //*************************************************************
+
 });
 
 /***/ }),
@@ -6162,6 +7363,131 @@ __webpack_require__.r(__webpack_exports__);
 
 }));
 //# sourceMappingURL=bootstrap.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-sidebar-menu/dist/vue-sidebar-menu.css":
+/*!*************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-sidebar-menu/dist/vue-sidebar-menu.css ***!
+  \*************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".v-sidebar-menu{position:fixed;top:0;left:0;height:100vh;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;z-index:999;-webkit-box-sizing:border-box;box-sizing:border-box;width:100%;-webkit-transition:0.3s max-width;transition:0.3s max-width}.v-sidebar-menu *{-webkit-box-sizing:border-box;box-sizing:border-box}.v-sidebar-menu>.vsm--list{width:100%;height:100%;overflow-y:auto;overflow-x:hidden}.v-sidebar-menu .vsm--dropdown>.vsm--list{padding:5px}.v-sidebar-menu .vsm--item{position:relative;display:block}.v-sidebar-menu .vsm--link{position:relative;display:block;font-size:16px;font-weight:400;padding:10px;line-height:30px;text-decoration:none;z-index:20;-webkit-transition:0.3s all;transition:0.3s all}.v-sidebar-menu .vsm--link_exact-active,.v-sidebar-menu .vsm--link_active{font-weight:600}.v-sidebar-menu .vsm--link_disabled{opacity:0.4;pointer-events:none}.v-sidebar-menu .vsm--link_level-1 .vsm--icon{height:30px;line-height:30px;width:30px;text-align:center;border-radius:3px}.v-sidebar-menu .vsm--link:after{content:'';display:block;clear:both}.v-sidebar-menu .vsm--title{display:block;white-space:nowrap}.v-sidebar-menu .vsm--icon{float:left;line-height:30px;margin-right:10px}.v-sidebar-menu .vsm--arrow{width:30px;text-align:center;font-style:normal;font-weight:900;position:absolute;right:10px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-transition:0.3s -webkit-transform;transition:0.3s -webkit-transform;transition:0.3s transform;transition:0.3s transform, 0.3s -webkit-transform}.v-sidebar-menu .vsm--arrow:after{content:'\\F105';font-family:'Font Awesome 5 Free'}.v-sidebar-menu .vsm--arrow_open{-webkit-transform:translateY(-50%) rotate(90deg);transform:translateY(-50%) rotate(90deg)}.v-sidebar-menu .vsm--arrow_slot:after{display:none}.v-sidebar-menu .vsm--header{font-size:14px;font-weight:600;padding:10px;white-space:nowrap;text-transform:uppercase}.v-sidebar-menu .vsm--badge{position:absolute;right:10px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.v-sidebar-menu .vsm--badge_default{padding:0px 6px;font-size:12px;border-radius:3px;height:20px;line-height:20px;font-weight:600;text-transform:uppercase}.v-sidebar-menu .vsm--toggle-btn{display:block;text-align:center;font-style:normal;font-weight:900;height:50px;cursor:pointer;border:none;width:100%}.v-sidebar-menu .vsm--toggle-btn:after{content:'\\F337';font-family:'Font Awesome 5 Free'}.v-sidebar-menu .vsm--toggle-btn_slot:after{display:none}.v-sidebar-menu.vsm_collapsed>.vsm--list{width:calc(100% + 17px);padding-right:17px}.v-sidebar-menu.vsm_rtl{right:0;left:inherit;text-align:right}.v-sidebar-menu.vsm_rtl>.vsm--list{direction:rtl}.v-sidebar-menu.vsm_rtl.vsm_collapsed>.vsm--list{padding-right:0px;padding-left:17px;margin-left:-17px}.v-sidebar-menu.vsm_rtl .vsm--icon{float:right;margin-left:10px;margin-right:0px}.v-sidebar-menu.vsm_rtl .vsm--arrow{left:10px;right:inherit}.v-sidebar-menu.vsm_rtl .vsm--badge{left:10px;right:inherit}.v-sidebar-menu .expand-enter-active,.v-sidebar-menu .expand-leave-active{-webkit-transition:height 0.35s ease;transition:height 0.35s ease;overflow:hidden}.v-sidebar-menu .expand-enter,.v-sidebar-menu .expand-leave-to{height:0 !important}.v-sidebar-menu .slide-animation-enter-active{-webkit-animation:slide-animation 0.2s;animation:slide-animation 0.2s}.v-sidebar-menu .slide-animation-leave-active{animation:slide-animation 0.2s reverse}@-webkit-keyframes slide-animation{0%{width:0%}100%{width:100%}}@keyframes slide-animation{0%{width:0%}100%{width:100%}}.v-sidebar-menu{background-color:#2a2a2e}.v-sidebar-menu .vsm--link{color:#fff}.v-sidebar-menu .vsm--link_exact-active,.v-sidebar-menu .vsm--link_active{color:#fff}.v-sidebar-menu .vsm--link_level-1.vsm--link_exact-active .vsm--icon,.v-sidebar-menu .vsm--link_level-1.vsm--link_active .vsm--icon{color:#fff;background-color:#1e1e21}.v-sidebar-menu .vsm--link_level-1 .vsm--icon{background-color:#1e1e21}.v-sidebar-menu .vsm--link:hover{color:#fff;background-color:rgba(30,30,33,0.5)}.v-sidebar-menu .vsm--icon{color:#fff}.v-sidebar-menu.vsm_expanded .vsm--item_open .vsm--link_level-1{color:#fff;background-color:#4285f4}.v-sidebar-menu.vsm_expanded .vsm--item_open .vsm--link_level-1 .vsm--icon{color:#fff;background-color:rgba(0,0,0,0)}.v-sidebar-menu.vsm_collapsed .vsm--link.vsm--link_mobile-item{color:#fff;background-color:transparent}.v-sidebar-menu.vsm_collapsed .vsm--link.vsm--link_mobile-item .vsm--icon{color:#fff;background-color:rgba(0,0,0,0)}.v-sidebar-menu.vsm_collapsed .vsm--mobile-bg{background-color:#4285f4}.v-sidebar-menu .vsm--dropdown .vsm--list{background-color:#36363b}.v-sidebar-menu .vsm--dropdown .vsm--link{color:#fff}.v-sidebar-menu .vsm--dropdown .vsm--icon{color:#fff}.v-sidebar-menu .vsm--link.vsm--link_level-1.vsm--link_exact-active{-webkit-box-shadow:3px 0px 0px 0px #4285f4 inset;box-shadow:3px 0px 0px 0px #4285f4 inset}.v-sidebar-menu.vsm_rtl .vsm--link.vsm--link_level-1.vsm--link_exact-active{-webkit-box-shadow:-3px 0px 0px 0px #4285f4 inset;box-shadow:-3px 0px 0px 0px #4285f4 inset}.v-sidebar-menu .vsm--header{color:rgba(255,255,255,0.7)}.v-sidebar-menu .vsm--badge.vsm--badge_default{color:#fff;background-color:#1e1e21}.v-sidebar-menu .vsm--toggle-btn{color:#fff;background-color:#1e1e21}.v-sidebar-menu.vsm_white-theme{background-color:#fff}.v-sidebar-menu.vsm_white-theme .vsm--link{color:#262626}.v-sidebar-menu.vsm_white-theme .vsm--link_exact-active,.v-sidebar-menu.vsm_white-theme .vsm--link_active{color:#262626}.v-sidebar-menu.vsm_white-theme .vsm--link_level-1.vsm--link_exact-active,.v-sidebar-menu.vsm_white-theme .vsm--link_level-1.vsm--link_active{-webkit-box-shadow:3px 0px 0px 0px #4285f4 inset;box-shadow:3px 0px 0px 0px #4285f4 inset}.v-sidebar-menu.vsm_white-theme .vsm--link_level-1.vsm--link_exact-active .vsm--icon,.v-sidebar-menu.vsm_white-theme .vsm--link_level-1.vsm--link_active .vsm--icon{color:#fff;background-color:#262626}.v-sidebar-menu.vsm_white-theme .vsm--link_level-1 .vsm--icon{background-color:#bbc5d6}.v-sidebar-menu.vsm_white-theme .vsm--link:hover{color:#262626;background-color:#f2f2f2}.v-sidebar-menu.vsm_white-theme .vsm--icon{color:#262626}.v-sidebar-menu.vsm_white-theme .vsm--dropdown .vsm--list{background-color:#e3e3e3}.v-sidebar-menu.vsm_white-theme .vsm--dropdown .vsm--link{color:#262626}.v-sidebar-menu.vsm_white-theme .vsm--dropdown .vsm--icon{color:#262626}.v-sidebar-menu.vsm_white-theme.vsm_expanded .vsm--item.vsm--item_open .vsm--link_level-1{color:#fff;background-color:#4285f4}.v-sidebar-menu.vsm_white-theme.vsm_expanded .vsm--item.vsm--item_open .vsm--link_level-1 .vsm--icon{color:#fff;background-color:rgba(0,0,0,0)}.v-sidebar-menu.vsm_white-theme.vsm_collapsed .vsm--link.vsm--link_mobile-item{color:#fff;background-color:transparent}.v-sidebar-menu.vsm_white-theme.vsm_collapsed .vsm--link.vsm--link_mobile-item .vsm--icon{color:#fff;background-color:rgba(0,0,0,0)}.v-sidebar-menu.vsm_white-theme.vsm_collapsed .vsm--mobile-bg{background-color:#4285f4}.v-sidebar-menu.vsm_white-theme.vsm_rtl .vsm--link.vsm--link_level-1.vsm--link_active,.v-sidebar-menu.vsm_white-theme.vsm_rtl .vsm--link.vsm--link_level-1.vsm--link_exact-active{-webkit-box-shadow:-3px 0px 0px 0px #4285f4 inset;box-shadow:-3px 0px 0px 0px #4285f4 inset}.v-sidebar-menu.vsm_white-theme .vsm--header{color:rgba(38,38,38,0.7)}.v-sidebar-menu.vsm_white-theme .vsm--badge.vsm--badge_default{color:#262626;background-color:#f2f2f2}.v-sidebar-menu.vsm_white-theme .vsm--toggle-btn{color:#262626;background-color:#f2f2f2}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/Flash.vue?vue&type=style&index=0&lang=css&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/marhatorzs/Flash.vue?vue&type=style&index=0&lang=css& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.spacing {\n\n    position:fixed;\n    font-size: 26px;\n    left: 42%;\n    top: 42%;\n    z-index: 99;\n    background-color:#e0e0e0; \n    border: 2px ridge;\n    box-shadow: 2px 2px 2px 0px #662210;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/*!*************************************************!*\
+  !*** ./node_modules/css-loader/lib/css-base.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
 
 
 /***/ }),
@@ -36925,6 +38251,545 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/Flash.vue?vue&type=style&index=0&lang=css&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/marhatorzs/Flash.vue?vue&type=style&index=0&lang=css& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--7-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Flash.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/Flash.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getTarget = function (target, parent) {
+  if (parent){
+    return parent.querySelector(target);
+  }
+  return document.querySelector(target);
+};
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(target, parent) {
+                // If passing function in options, then use it for resolve "head" element.
+                // Useful for Shadow Root style i.e
+                // {
+                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
+                // }
+                if (typeof target === 'function') {
+                        return target();
+                }
+                if (typeof memo[target] === "undefined") {
+			var styleTarget = getTarget.call(this, target, parent);
+			// Special case to return head of iframe instead of iframe itself
+			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+				try {
+					// This will throw an exception if access to iframe is blocked
+					// due to cross-origin restrictions
+					styleTarget = styleTarget.contentDocument.head;
+				} catch(e) {
+					styleTarget = null;
+				}
+			}
+			memo[target] = styleTarget;
+		}
+		return memo[target]
+	};
+})();
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+        if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
+		var nextSibling = getElement(options.insertAt.before, target);
+		target.insertBefore(style, nextSibling);
+	} else {
+		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+
+	if(options.attrs.nonce === undefined) {
+		var nonce = getNonce();
+		if (nonce) {
+			options.attrs.nonce = nonce;
+		}
+	}
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function getNonce() {
+	if (false) {}
+
+	return __webpack_require__.nc;
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = typeof options.transform === 'function'
+		 ? options.transform(obj.css) 
+		 : options.transform.default(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/timers-browserify/main.js":
 /*!************************************************!*\
   !*** ./node_modules/timers-browserify/main.js ***!
@@ -37000,9 +38865,9 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/Flash.vue?vue&type=template&id=0034dc36&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/marhatorzs/Flash.vue?vue&type=template&id=0034dc36& ***!
   \*******************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -37015,32 +38880,1691 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    {
+      directives: [
+        { name: "show", rawName: "v-show", value: _vm.show, expression: "show" }
+      ],
+      staticClass: "alert alert-success spacing",
+      attrs: { role: "alert" }
+    },
+    [_vm._v("\n    " + _vm._s(_vm.body) + "\n")]
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=template&id=9a1f6958&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=template&id=9a1f6958& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "bevitel-dialog" }, [
+    _c("div", { staticClass: "bevitel-fejlec" }, [
+      _vm._v("Marha törzsadat bevitel")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "bevitel-body" }, [
+      _c("br"),
+      _vm._v(" "),
+      _c("form", { on: { submit: _vm.formSubmit } }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.enarszam.is_valid,
+                    expression: "!validations.enarszam.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.enarszam.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "enarszam" }
+            },
+            [_vm._v("Enárszám")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.enarszam,
+                expression: "AllatokMarha.enarszam"
+              }
+            ],
+            staticClass: "'col-lg-4 control-label'",
+            attrs: {
+              type: "text",
+              title: "Az enárszám pontosan egy tízjegyű szám legyen!",
+              name: "enarszam",
+              id: "enarszam"
+            },
+            domProps: { value: _vm.AllatokMarha.enarszam },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.AllatokMarha, "enarszam", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.neve.is_valid,
+                    expression: "!validations.neve.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.neve.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "col-lg-5 control-label", attrs: { for: "neve" } },
+            [_vm._v("Az állat neve")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.neve,
+                expression: "AllatokMarha.neve"
+              }
+            ],
+            staticClass: "col-lg-4 control-label",
+            attrs: {
+              type: "text",
+              title:
+                "Ha nem ír be semmmit akkor az enarszamot irjuk be a nevének",
+              name: "neve",
+              id: "neve"
+            },
+            domProps: { value: _vm.AllatokMarha.neve },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.AllatokMarha, "neve", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.neme.is_valid,
+                    expression: "!validations.neme.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.neme.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "col-lg-5 control-label", attrs: { for: "neme" } },
+            [_vm._v("Az állat neme")]
+          ),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.AllatokMarha.neme,
+                  expression: "AllatokMarha.neme"
+                }
+              ],
+              staticClass: "custom-select custom-select-sm col-lg-4",
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.$set(
+                    _vm.AllatokMarha,
+                    "neme",
+                    $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                  )
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { selected: "", value: "noivaru" } }, [
+                _vm._v("Nőivarú")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "himivaru" } }, [
+                _vm._v("Hímivarú")
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.fajta.is_valid,
+                    expression: "!validations.fajta.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.fajta.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "col-lg-5 control-label", attrs: { for: "fajta" } },
+            [_vm._v("Fajta")]
+          ),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.AllatokMarha.fajta,
+                  expression: "AllatokMarha.fajta"
+                }
+              ],
+              staticClass: "custom-select custom-select-sm col-lg-4",
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.$set(
+                    _vm.AllatokMarha,
+                    "fajta",
+                    $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                  )
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { selected: "", value: "magyartarka" } }, [
+                _vm._v("Magyartarka")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "limousin" } }, [
+                _vm._v("Limousine")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "lapaly" } }, [
+                _vm._v("Lapály marha")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "feher_kek" } }, [
+                _vm._v("Fehér-kék belga")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "hereford" } }, [
+                _vm._v("Hereford")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "hersey" } }, [_vm._v("Hersey")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "magyarszurke" } }, [
+                _vm._v("Magyar Szürke")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "egyebbhushasznu" } }, [
+                _vm._v("Egyébb húshasznú")
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.szine.is_valid,
+                    expression: "!validations.szine.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.szine.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "col-lg-5 control-label", attrs: { for: "szine" } },
+            [_vm._v("Színe")]
+          ),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.AllatokMarha.szine,
+                  expression: "AllatokMarha.szine"
+                }
+              ],
+              staticClass: "custom-select custom-select-sm col-lg-4",
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.$set(
+                    _vm.AllatokMarha,
+                    "szine",
+                    $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                  )
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { selected: "", value: "vorostarka" } }, [
+                _vm._v("Vöröstarka")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "feketetarka" } }, [
+                _vm._v("Fekete-tarka")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "zsemletarka" } }, [
+                _vm._v("Zsemletarka")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "fekete" } }, [
+                _vm._v("Egyszínű fekete")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "voros" } }, [
+                _vm._v("Egyszínű vörös")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "feketevoros" } }, [
+                _vm._v("Fekete-vörös")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "egyebbtarka" } }, [
+                _vm._v("Egyébb-tarka")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "egyebb" } }, [
+                _vm._v("Egyszínű-egyébb")
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.szuletes_datuma.is_valid,
+                    expression: "!validations.szuletes_datuma.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.szuletes_datuma.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "szuletes_datuma" }
+            },
+            [_vm._v("A születés dátuma")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.szuletes_datuma,
+                expression: "AllatokMarha.szuletes_datuma"
+              }
+            ],
+            staticClass: "col-lg-4 control-label",
+            attrs: { type: "date", name: "neve", id: "szuletes_datuma" },
+            domProps: { value: _vm.AllatokMarha.szuletes_datuma },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(
+                  _vm.AllatokMarha,
+                  "szuletes_datuma",
+                  $event.target.value
+                )
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.bekerult.is_valid,
+                    expression: "!validations.bekerult.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.bekerult.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "bekerult" }
+            },
+            [_vm._v("Bekerült")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.bekerult,
+                expression: "AllatokMarha.bekerult"
+              }
+            ],
+            staticClass: "col-lg-4 control-label",
+            attrs: {
+              type: "date",
+              title:
+                "A bekerülés dátuma nem lehet kisebb mint a születés dátuma!",
+              name: "bekerult",
+              id: "bekerult"
+            },
+            domProps: { value: _vm.AllatokMarha.bekerult },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.AllatokMarha, "bekerult", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.anya_enarszam.is_valid,
+                    expression: "!validations.anya_enarszam.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.anya_enarszam.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "anya_enarszam" }
+            },
+            [_vm._v("Anya Enárszám")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.anya_enarszam,
+                expression: "AllatokMarha.anya_enarszam"
+              }
+            ],
+            staticClass: "'col-lg-4 control-label'",
+            attrs: {
+              type: "text",
+              title: "Pontosan egy tízjegyű szám kell hogy legyen!",
+              name: "anya_enarszam",
+              id: "anya_enarszam"
+            },
+            domProps: { value: _vm.AllatokMarha.anya_enarszam },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.AllatokMarha, "anya_enarszam", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.anya_neve.is_valid,
+                    expression: "!validations.anya_neve.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.anya_neve.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "anya_neve" }
+            },
+            [_vm._v("Anya neve")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.anya_neve,
+                expression: "AllatokMarha.anya_neve"
+              }
+            ],
+            staticClass: "'col-lg-4 control-label'",
+            attrs: {
+              type: "text",
+              title:
+                "Ha nem ír be semmit akkor az anya enarszamot fogjuk ide beírni!",
+              name: "anya_neve",
+              id: "anya_neve"
+            },
+            domProps: { value: _vm.AllatokMarha.anya_neve },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.AllatokMarha, "anya_neve", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.jarlat_sorszam.is_valid,
+                    expression: "!validations.jarlat_sorszam.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.jarlat_sorszam.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "jarlat_sorszam" }
+            },
+            [_vm._v("Járlat sorszáma")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.jarlat_sorszam,
+                expression: "AllatokMarha.jarlat_sorszam"
+              }
+            ],
+            staticClass: "'col-lg-4 control-label'",
+            attrs: {
+              type: "text",
+              title:
+                "Ha még nem kapta meg a járlatot akkor ideiglenesen irjon be valamit!",
+              name: "jarlat_sorszam",
+              id: "jarlat_sorszam"
+            },
+            domProps: { value: _vm.AllatokMarha.jarlat_sorszam },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(
+                  _vm.AllatokMarha,
+                  "jarlat_sorszam",
+                  $event.target.value
+                )
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.jarlat_kiadasa.is_valid,
+                    expression: "!validations.jarlat_kiadasa.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.jarlat_kiadasa.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "jarlat_kiadasa" }
+            },
+            [_vm._v("Járlat kiadása")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.jarlat_kiadasa,
+                expression: "AllatokMarha.jarlat_kiadasa"
+              }
+            ],
+            staticClass: "col-lg-4 control-label",
+            attrs: {
+              type: "date",
+              title:
+                "Ez nem lehet kisebb mint a bekerülés és vagy a születés dátuma!",
+              name: "jarlat_kiadasa",
+              id: "jarlat_kiadasa"
+            },
+            domProps: { value: _vm.AllatokMarha.jarlat_kiadasa },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(
+                  _vm.AllatokMarha,
+                  "jarlat_kiadasa",
+                  $event.target.value
+                )
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.szarmazas_tenyeszet.is_valid,
+                    expression: "!validations.szarmazas_tenyeszet.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.szarmazas_tenyeszet.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "szarmazas_tenyeszet" }
+            },
+            [_vm._v("Származás tenyészet")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.szarmazas_tenyeszet,
+                expression: "AllatokMarha.szarmazas_tenyeszet"
+              }
+            ],
+            staticClass: "'col-lg-4 control-label'",
+            attrs: {
+              type: "text",
+              name: "szarmazas_tenyeszet",
+              id: "szarmazas_tenyeszet"
+            },
+            domProps: { value: _vm.AllatokMarha.szarmazas_tenyeszet },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(
+                  _vm.AllatokMarha,
+                  "szarmazas_tenyeszet",
+                  $event.target.value
+                )
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "bevitel-nyomogomb" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              on: { click: _vm.CancelMarhatorzsBevitel }
+            },
+            [_vm._v("Cancel")]
+          ),
+          _vm._v(" "),
+          _c("button", { staticClass: "btn btn-success" }, [_vm._v("Elküld")])
+        ]),
+        _vm._v(" "),
+        _c("div")
+      ]),
+      _vm._v(" "),
+      _c("div", [
+        _c(
+          "span",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: !_vm.validations.eredmeny,
+                expression: "!validations.eredmeny"
+              }
+            ],
+            staticClass: "bevitel-error-szine"
+          },
+          [_vm._v("Nézze meg a hibaüzeneteket!")]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("strong", [_vm._v("Output:")]),
+    _vm._v(" "),
+    _c("pre", [
+      _vm._v(
+        "                        " +
+          _vm._s(_vm.output) +
+          "\n                        "
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=template&id=fc36c520&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=template&id=fc36c520& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "bevitel-dialog" }, [
+    _c("div", { staticClass: "bevitel-fejlec" }, [
+      _vm._v("Marha törzsadat módosítás")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "bevitel-body" }, [
+      _c("br"),
+      _vm._v(" "),
+      _c("form", { on: { submit: _vm.formUpdate } }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.enarszam.is_valid,
+                    expression: "!validations.enarszam.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.enarszam.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "enarszam" }
+            },
+            [_vm._v("Enárszám")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.enarszam,
+                expression: "AllatokMarha.enarszam"
+              }
+            ],
+            staticClass: "'col-lg-4 control-label'",
+            attrs: {
+              type: "text",
+              title: "Az enárszám pontosan egy tízjegyű szám legyen!",
+              name: "enarszam",
+              id: "enarszam",
+              value: "AllatokMarha->enarszam"
+            },
+            domProps: { value: _vm.AllatokMarha.enarszam },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.AllatokMarha, "enarszam", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.neve.is_valid,
+                    expression: "!validations.neve.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.neve.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "col-lg-5 control-label", attrs: { for: "neve" } },
+            [_vm._v("Az állat neve")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.neve,
+                expression: "AllatokMarha.neve"
+              }
+            ],
+            staticClass: "col-lg-4 control-label",
+            attrs: {
+              type: "text",
+              title:
+                "Ha nem ír be semmmit akkor az enarszamot irjuk be a nevének",
+              name: "neve",
+              id: "neve",
+              value: "AllatokMarha->neve"
+            },
+            domProps: { value: _vm.AllatokMarha.neve },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.AllatokMarha, "neve", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.neme.is_valid,
+                    expression: "!validations.neme.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.neme.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "col-lg-5 control-label", attrs: { for: "neme" } },
+            [_vm._v("Az állat neme")]
+          ),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.AllatokMarha.neme,
+                  expression: "AllatokMarha.neme"
+                }
+              ],
+              staticClass: "custom-select custom-select-sm col-lg-4",
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.$set(
+                    _vm.AllatokMarha,
+                    "neme",
+                    $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                  )
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { selected: "", value: "noivaru" } }, [
+                _vm._v("Nőivarú")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "himivaru" } }, [
+                _vm._v("Hímivarú")
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.fajta.is_valid,
+                    expression: "!validations.fajta.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.fajta.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "col-lg-5 control-label", attrs: { for: "fajta" } },
+            [_vm._v("Fajta")]
+          ),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.AllatokMarha.fajta,
+                  expression: "AllatokMarha.fajta"
+                }
+              ],
+              staticClass: "custom-select custom-select-sm col-lg-4",
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.$set(
+                    _vm.AllatokMarha,
+                    "fajta",
+                    $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                  )
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { selected: "", value: "magyartarka" } }, [
+                _vm._v("Magyartarka")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "limousin" } }, [
+                _vm._v("Limousine")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "lapaly" } }, [
+                _vm._v("Lapály marha")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "feher_kek" } }, [
+                _vm._v("Fehér-kék belga")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "hereford" } }, [
+                _vm._v("Hereford")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "hersey" } }, [_vm._v("Hersey")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "magyarszurke" } }, [
+                _vm._v("Magyar Szürke")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "egyebbhushasznu" } }, [
+                _vm._v("Egyébb húshasznú")
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.szine.is_valid,
+                    expression: "!validations.szine.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.szine.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "col-lg-5 control-label", attrs: { for: "szine" } },
+            [_vm._v("Színe")]
+          ),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.AllatokMarha.szine,
+                  expression: "AllatokMarha.szine"
+                }
+              ],
+              staticClass: "custom-select custom-select-sm col-lg-4",
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.$set(
+                    _vm.AllatokMarha,
+                    "szine",
+                    $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                  )
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { selected: "", value: "vorostarka" } }, [
+                _vm._v("Vöröstarka")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "feketetarka" } }, [
+                _vm._v("Fekete-tarka")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "zsemletarka" } }, [
+                _vm._v("Zsemletarka")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "fekete" } }, [
+                _vm._v("Egyszínű fekete")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "voros" } }, [
+                _vm._v("Egyszínű vörös")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "feketevoros" } }, [
+                _vm._v("Fekete-vörös")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "egyebbtarka" } }, [
+                _vm._v("Egyébb-tarka")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "egyebb" } }, [
+                _vm._v("Egyszínű-egyébb")
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.szuletes_datuma.is_valid,
+                    expression: "!validations.szuletes_datuma.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.szuletes_datuma.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "szuletes_datuma" }
+            },
+            [_vm._v("A születés dátuma")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.szuletes_datuma,
+                expression: "AllatokMarha.szuletes_datuma"
+              }
+            ],
+            staticClass: "col-lg-4 control-label",
+            attrs: { type: "date", name: "neve", id: "szuletes_datuma" },
+            domProps: { value: _vm.AllatokMarha.szuletes_datuma },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(
+                  _vm.AllatokMarha,
+                  "szuletes_datuma",
+                  $event.target.value
+                )
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.bekerult.is_valid,
+                    expression: "!validations.bekerult.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.bekerult.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "bekerult" }
+            },
+            [_vm._v("Bekerült")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.bekerult,
+                expression: "AllatokMarha.bekerult"
+              }
+            ],
+            staticClass: "col-lg-4 control-label",
+            attrs: {
+              type: "date",
+              title:
+                "A bekerülés dátuma nem lehet kisebb mint a születés dátuma!",
+              name: "bekerult",
+              id: "bekerult"
+            },
+            domProps: { value: _vm.AllatokMarha.bekerult },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.AllatokMarha, "bekerult", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.anya_enarszam.is_valid,
+                    expression: "!validations.anya_enarszam.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.anya_enarszam.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "anya_enarszam" }
+            },
+            [_vm._v("Anya Enárszám")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.anya_enarszam,
+                expression: "AllatokMarha.anya_enarszam"
+              }
+            ],
+            staticClass: "'col-lg-4 control-label'",
+            attrs: {
+              type: "text",
+              title: "Pontosan egy tízjegyű szám kell hogy legyen!",
+              name: "anya_enarszam",
+              id: "anya_enarszam"
+            },
+            domProps: { value: _vm.AllatokMarha.anya_enarszam },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.AllatokMarha, "anya_enarszam", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.anya_neve.is_valid,
+                    expression: "!validations.anya_neve.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.anya_neve.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "anya_neve" }
+            },
+            [_vm._v("Anya neve")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.anya_neve,
+                expression: "AllatokMarha.anya_neve"
+              }
+            ],
+            staticClass: "'col-lg-4 control-label'",
+            attrs: {
+              type: "text",
+              title:
+                "Ha nem ír be semmit akkor az anya enarszamot fogjuk ide beírni!",
+              name: "anya_neve",
+              id: "anya_neve"
+            },
+            domProps: { value: _vm.AllatokMarha.anya_neve },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.AllatokMarha, "anya_neve", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.jarlat_sorszam.is_valid,
+                    expression: "!validations.jarlat_sorszam.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.jarlat_sorszam.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "jarlat_sorszam" }
+            },
+            [_vm._v("Járlat sorszáma")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.jarlat_sorszam,
+                expression: "AllatokMarha.jarlat_sorszam"
+              }
+            ],
+            staticClass: "'col-lg-4 control-label'",
+            attrs: {
+              type: "text",
+              title:
+                "Ha még nem kapta meg a járlatot akkor ideiglenesen irjon be valamit!",
+              name: "jarlat_sorszam",
+              id: "jarlat_sorszam"
+            },
+            domProps: { value: _vm.AllatokMarha.jarlat_sorszam },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(
+                  _vm.AllatokMarha,
+                  "jarlat_sorszam",
+                  $event.target.value
+                )
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.jarlat_kiadasa.is_valid,
+                    expression: "!validations.jarlat_kiadasa.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.jarlat_kiadasa.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "jarlat_kiadasa" }
+            },
+            [_vm._v("Járlat kiadása")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.jarlat_kiadasa,
+                expression: "AllatokMarha.jarlat_kiadasa"
+              }
+            ],
+            staticClass: "col-lg-4 control-label",
+            attrs: {
+              type: "date",
+              title:
+                "Ez nem lehet kisebb mint a bekerülés és vagy a születés dátuma!",
+              name: "jarlat_kiadasa",
+              id: "jarlat_kiadasa"
+            },
+            domProps: { value: _vm.AllatokMarha.jarlat_kiadasa },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(
+                  _vm.AllatokMarha,
+                  "jarlat_kiadasa",
+                  $event.target.value
+                )
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", [
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.validations.szarmazas_tenyeszet.is_valid,
+                    expression: "!validations.szarmazas_tenyeszet.is_valid"
+                  }
+                ],
+                staticClass: "bevitel-error-szine"
+              },
+              [_vm._v(_vm._s(_vm.validations.szarmazas_tenyeszet.text))]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "col-lg-5 control-label",
+              attrs: { for: "szarmazas_tenyeszet" }
+            },
+            [_vm._v("Származás tenyészet")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.AllatokMarha.szarmazas_tenyeszet,
+                expression: "AllatokMarha.szarmazas_tenyeszet"
+              }
+            ],
+            staticClass: "'col-lg-4 control-label'",
+            attrs: {
+              type: "text",
+              name: "szarmazas_tenyeszet",
+              id: "szarmazas_tenyeszet"
+            },
+            domProps: { value: _vm.AllatokMarha.szarmazas_tenyeszet },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(
+                  _vm.AllatokMarha,
+                  "szarmazas_tenyeszet",
+                  $event.target.value
+                )
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c(
+            "span",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.validations.eredmeny,
+                  expression: "!validations.eredmeny"
+                }
+              ],
+              staticClass: "bevitel-error-szine"
+            },
+            [_vm._v("Nézze meg a hibaüzeneteket!")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "bevitel-nyomogomb" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              on: { click: _vm.CancelMarhatorzsUpdate }
+            },
+            [_vm._v("Cancel")]
+          ),
+          _vm._v(" "),
+          _c("button", { staticClass: "btn btn-success" }, [_vm._v("Elküld")])
+        ]),
+        _vm._v(" "),
+        _c("div")
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -37151,6 +40675,48 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/vue-sidebar-menu/dist/vue-sidebar-menu.css":
+/*!*****************************************************************!*\
+  !*** ./node_modules/vue-sidebar-menu/dist/vue-sidebar-menu.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../css-loader??ref--7-1!../../postcss-loader/src??ref--7-2!./vue-sidebar-menu.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-sidebar-menu/dist/vue-sidebar-menu.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-sidebar-menu/dist/vue-sidebar-menu.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/vue-sidebar-menu/dist/vue-sidebar-menu.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(t,e){ true?module.exports=e():undefined}(window,function(){return function(t){var e={};function i(s){if(e[s])return e[s].exports;var n=e[s]={i:s,l:!1,exports:{}};return t[s].call(n.exports,n,n.exports,i),n.l=!0,n.exports}return i.m=t,i.c=e,i.d=function(t,e,s){i.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:s})},i.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},i.t=function(t,e){if(1&e&&(t=i(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var s=Object.create(null);if(i.r(s),Object.defineProperty(s,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var n in t)i.d(s,n,function(e){return t[e]}.bind(null,n));return s},i.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return i.d(e,"a",e),e},i.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},i.p="/dist/",i(i.s=6)}([function(t,e,i){"use strict";function s(t,e,i,s,n,o,l,a){var r,h="function"==typeof t?t.options:t;if(e&&(h.render=e,h.staticRenderFns=i,h._compiled=!0),s&&(h.functional=!0),o&&(h._scopeId="data-v-"+o),l?(r=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),n&&n.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(l)},h._ssrRegister=r):n&&(r=a?function(){n.call(this,this.$root.$options.shadowRoot)}:n),r)if(h.functional){h._injectStyles=r;var m=h.render;h.render=function(t,e){return r.call(e),m(t,e)}}else{var c=h.beforeCreate;h.beforeCreate=c?[].concat(c,r):[r]}return{exports:t,options:h}}i.d(e,"a",function(){return s})},function(t,e,i){"use strict";i.d(e,"b",function(){return s}),i.d(e,"a",function(){return n});var s={data:function(){return{active:!1,childActive:!1,itemShow:!1}},created:function(){this.item.header||this.item.component||(this.initActiveState(),this.initShowState(),this.$router||window.addEventListener("hashchange",this.initActiveState))},destroyed:function(){this.$router||window.removeEventListener("hashchange",this.initActiveState)},methods:{isLinkActive:function(t){return!!t.href&&(this.matchRoute(t.href)||this.isAliasActive(t))},isChildActive:function(t){var e=this;return!!t&&t.some(function(t){return e.isLinkActive(t)||!!t.child&&e.isChildActive(t.child)})},isAliasActive:function(t){var e=this;return!!t.alias&&(Array.isArray(t.alias)?t.alias.some(function(t){return e.matchRoute(t)}):this.matchRoute(t.alias))},matchRoute:function(t){return this.$router?this.$router.resolve(t).route.fullPath===this.$route.fullPath:t===window.location.pathname+window.location.search+window.location.hash},clickEvent:function(t){if(this.emitItemClick(t,this.item),!this.item.href&&!this.item.child||this.item.disabled)t.preventDefault();else if(!this.mobileItem&&this.isCollapsed&&this.isFirstLevel&&this.$emit("unset-mobile-item",!0,void 0!==this.item.child),this.item.child){if(this.item.href||t.preventDefault(),this.mobileItem)return;this.showOneChild?this.activeShow===this.item?this.setActiveShow(!1):this.setActiveShow(!0,this.item):this.itemShow=!this.itemShow}else this.showOneChild&&this.emitActiveShow(null)},setActiveShow:function(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;this.emitActiveShow(e),this.itemShow=t},initActiveState:function(){this.active=this.isLinkActive(this.item),this.childActive=this.isChildActive(this.item.child)},initShowState:function(){this.item&&this.item.child&&(this.itemShow=this.active||this.childActive,this.showOneChild&&!this.showChild&&this.isFirstLevel&&(this.active||this.childActive)&&this.emitActiveShow(this.item))},mouseEnterEvent:function(t){this.isCollapsed&&this.isFirstLevel&&!this.mobileItem&&!this.item.disabled&&this.$emit("set-mobile-item",{event:t,item:this.item})}},computed:{isRouterLink:function(){return!0===(this.$router&&this.item&&void 0!==this.item.href&&!this.item.external)},isFirstLevel:function(){return 1===this.level},show:function(){return!!this.item.child&&(!(!this.showChild&&!this.mobileItem)||(this.isFirstLevel&&this.showOneChild?this.item===this.activeShow:this.itemShow))},itemLinkClass:function(){return["vsm--link","vsm--link_level-"+this.level,{"vsm--link_mobile-item":this.mobileItem},{"vsm--link_exact-active":this.active},{"vsm--link_active":this.childActive},{"vsm--link_disabled":this.item.disabled},this.item.class]},isItemHidden:function(){return this.isCollapsed?!(!this.item.hidden||void 0!==this.item.hiddenOnCollapse)||!0===this.item.hiddenOnCollapse:!0===this.item.hidden},itemLinkHref:function(){return(this.$router||this.item.href&&"string"==typeof this.item.href)&&this.item.href?this.item.href:"#"}},watch:{$route:function(){this.item.header||this.item.component||this.initActiveState()}},inject:["emitActiveShow","emitItemClick"]},n={methods:{expandEnter:function(t){t.style.height=t.scrollHeight+"px"},expandAfterEnter:function(t){t.style.height="auto"},expandBeforeLeave:function(t){!this.isCollapsed||!this.isFirstLevel&&void 0!==this.level?t.style.height=t.scrollHeight+"px":t.style.display="none"}}}},function(t,e,i){},function(t,e,i){"use strict";var s={props:{items:{type:Array,required:!0},level:{type:Number,default:2},showChild:{type:Boolean,default:!1},rtl:{type:Boolean,default:!1},isCollapsed:{type:Boolean}},beforeCreate:function(){this.$options.components.Item=i(4).default}},n=i(0),o=Object(n.a)(s,function(){var t=this,e=t.$createElement,i=t._self._c||e;return i("div",{staticClass:"vsm--list"},t._l(t.items,function(e,s){return i("item",{key:s,attrs:{item:e,level:t.level,"show-child":t.showChild,rtl:t.rtl,"is-collapsed":t.isCollapsed}},[t._t("dropdown-icon",null,{slot:"dropdown-icon"})],2)}),1)},[],!1,null,null,null);o.options.__file="ListItem.vue";e.a=o.exports},function(t,e,i){"use strict";i.r(e);var s=i(3),n=i(1),o={components:{ListItem:s.a},mixins:[n.b,n.a],props:{item:{type:Object,required:!0},level:{type:Number,default:1},isCollapsed:{type:Boolean},mobileItem:{type:Boolean,default:!1},activeShow:{type:Object,default:null},showChild:{type:Boolean,default:!1},showOneChild:{type:Boolean,default:!1},rtl:{type:Boolean,default:!1}}},l=i(0),a=Object(l.a)(o,function(){var t=this,e=t.$createElement,i=t._self._c||e;return t.item.component&&!t.isItemHidden?i(t.item.component,{tag:"component"}):t.item.header&&!t.isItemHidden?i("div",t._b({staticClass:"vsm--header",class:t.item.class},"div",t.item.attributes,!1),[t._v("\n  "+t._s(t.item.title)+"\n")]):t.isItemHidden?t._e():i("div",{staticClass:"vsm--item",class:[{"vsm--item_open":t.show}],on:{mouseenter:t.mouseEnterEvent}},[t.isRouterLink?[i("router-link",t._b({class:t.itemLinkClass,attrs:{to:t.itemLinkHref,disabled:t.item.disabled,tabindex:t.item.disabled?-1:void 0},nativeOn:{click:function(e){return t.clickEvent(e)}}},"router-link",t.item.attributes,!1),[t.item.icon?["string"==typeof t.item.icon||t.item.icon instanceof String?i("i",{staticClass:"vsm--icon",class:t.item.icon}):i(t.item.icon.element?t.item.icon.element:"i",t._b({tag:"component",staticClass:"vsm--icon",class:t.item.icon.class},"component",t.item.icon.attributes,!1),[t._v("\n          "+t._s(t.item.icon.text)+"\n        ")])]:t._e(),t._v(" "),t.isCollapsed&&!t.isFirstLevel||!t.isCollapsed||t.mobileItem?[t.item.badge?i(t.item.badge.element?t.item.badge.element:"span",t._b({tag:"component",staticClass:"vsm--badge",class:t.item.badge.class,style:[t.rtl?t.item.child?{"margin-left":"30px"}:"":t.item.child?{"margin-right":"30px"}:""]},"component",t.item.badge.attributes,!1),[t._v("\n          "+t._s(t.item.badge.text)+"\n        ")]):t._e(),t._v(" "),i("span",{staticClass:"vsm--title"},[t._v(t._s(t.item.title))]),t._v(" "),t.item.child?i("div",{staticClass:"vsm--arrow",class:[{"vsm--arrow_open":t.show},{"vsm--arrow_slot":t.$slots["dropdown-icon"]}]},[t._t("dropdown-icon")],2):t._e()]:t._e()],2)]:[i("a",t._b({class:t.itemLinkClass,attrs:{href:t.itemLinkHref,disabled:t.item.disabled,tabindex:t.item.disabled?-1:void 0},on:{click:t.clickEvent}},"a",t.item.attributes,!1),[t.item.icon?["string"==typeof t.item.icon||t.item.icon instanceof String?i("i",{staticClass:"vsm--icon",class:t.item.icon}):i(t.item.icon.element?t.item.icon.element:"i",t._b({tag:"component",staticClass:"vsm--icon",class:t.item.icon.class},"component",t.item.icon.attributes,!1),[t._v("\n          "+t._s(t.item.icon.text)+"\n        ")])]:t._e(),t._v(" "),t.isCollapsed&&!t.isFirstLevel||!t.isCollapsed||t.mobileItem?[t.item.badge?i(t.item.badge.element?t.item.badge.element:"span",t._b({tag:"component",staticClass:"vsm--badge",class:t.item.badge.class,style:[t.rtl?t.item.child?{"margin-left":"30px"}:"":t.item.child?{"margin-right":"30px"}:""]},"component",t.item.badge.attributes,!1),[t._v(t._s(t.item.badge.text))]):t._e(),t._v(" "),i("span",{staticClass:"vsm--title"},[t._v(t._s(t.item.title))]),t._v(" "),t.item.child?i("div",{staticClass:"vsm--arrow",class:[{"vsm--arrow_open":t.show},{"vsm--arrow_slot":t.$slots["dropdown-icon"]}]},[t._t("dropdown-icon")],2):t._e()]:t._e()],2)],t._v(" "),t.item.child?[t.isCollapsed&&!t.isFirstLevel||!t.isCollapsed?[i("transition",{attrs:{name:"expand"},on:{enter:t.expandEnter,afterEnter:t.expandAfterEnter,beforeLeave:t.expandBeforeLeave}},[t.show?i("div",{staticClass:"vsm--dropdown"},[i("listItem",{attrs:{items:t.item.child,level:t.level+1,"show-child":t.showChild,rtl:t.rtl,"is-collapsed":t.isCollapsed}},[t._t("dropdown-icon",null,{slot:"dropdown-icon"})],2)],1):t._e()])]:t._e()]:t._e()],2)},[],!1,null,null,null);a.options.__file="Item.vue";e.default=a.exports},function(t,e,i){"use strict";var s=i(2);i.n(s).a},function(t,e,i){"use strict";i.r(e);var s=i(4),n=i(3),o=i(1),l={name:"SidebarMenu",components:{Item:s.default,ListItem:n.a},mixins:[o.a],props:{menu:{type:Array,required:!0},collapsed:{type:Boolean,default:!1},width:{type:String,default:"350px"},widthCollapsed:{type:String,default:"50px"},showChild:{type:Boolean,default:!1},theme:{type:String,default:""},showOneChild:{type:Boolean,default:!1},rtl:{type:Boolean,default:!1},relative:{type:Boolean,default:!1},hideToggle:{type:Boolean,default:!1}},data:function(){return{isCollapsed:this.collapsed,mobileItem:null,mobileItemPos:0,mobileItemHeight:0,mobileItemTimeout:null,activeShow:null,parentHeight:"100vh",parentWidth:"100vw",parentOffsetTop:"0px",parentOffsetLeft:"0px"}},computed:{sidebarWidth:function(){return this.isCollapsed?this.widthCollapsed:this.width},mobileItemStyle:function(){return{item:[{position:"absolute"},{top:this.mobileItemPos+"px"},this.rtl?{right:"0px"}:{left:"0px"},{"z-index":30},{width:"calc("+this.parentWidth+" - "+this.parentOffsetLeft+")"},{"max-width":this.width}],dropdown:[{position:"absolute"},{top:this.mobileItemHeight+"px"},{left:this.rtl?"0px":this.sidebarWidth},{right:this.rtl?this.sidebarWidth:"0px"},{"max-height":"calc("+this.parentHeight+" - "+(this.mobileItemPos+this.mobileItemHeight)+"px - "+this.parentOffsetTop+")"},{"overflow-y":"auto"}]}}},watch:{collapsed:function(t){this.isCollapsed!==this.collapsed&&(this.isCollapsed=t,this.unsetMobileItem())}},methods:{onMouseLeave:function(){this.unsetMobileItem()},onToggleClick:function(){this.unsetMobileItem(),this.isCollapsed=!this.isCollapsed,this.$emit("toggle-collapse",this.isCollapsed)},onActiveShow:function(t){this.activeShow=t},onItemClick:function(t,e){this.$emit("item-click",t,e)},setMobileItem:function(t){var e=this,i=t.event,s=t.item,n=this.$el.getBoundingClientRect().top,o=this.$el.getBoundingClientRect().left,l=this.$el.getBoundingClientRect().right,a=i.currentTarget.getBoundingClientRect().top-n,r=i.currentTarget.offsetHeight;if(this.unsetMobileItem(),this.relative){var h=this.$el.parentElement,m=h.getBoundingClientRect().top,c=h.getBoundingClientRect().left;this.parentHeight=h.offsetHeight+"px",this.parentWidth=h.offsetWidth+"px",this.parentOffsetTop=n-m+"px",this.rtl?this.parentOffsetLeft=h.offsetWidth-l+c+"px":this.parentOffsetLeft=o-c+"px"}else this.parentOffsetTop=n+"px",this.rtl?this.parentOffsetLeft="calc("+this.parentWidth+" - "+l+"px)":this.parentOffsetLeft=o+"px";this.$nextTick(function(){e.mobileItem=s,e.mobileItemPos=a,e.mobileItemHeight=r})},unsetMobileItem:function(t,e){var i=this;t?(clearTimeout(this.mobileItemTimeout),e||(this.mobileItemTimeout=setTimeout(function(){i.mobileItem=null},600))):this.mobileItem=null}},provide:function(){return{emitActiveShow:this.onActiveShow,emitItemClick:this.onItemClick}}},a=(i(5),i(0)),r=Object(a.a)(l,function(){var t=this,e=t.$createElement,i=t._self._c||e;return i("div",{staticClass:"v-sidebar-menu",class:[t.isCollapsed?"vsm_collapsed":"vsm_expanded",t.theme?"vsm_"+t.theme:"",t.rtl?"vsm_rtl":""],style:[t.relative?{position:"relative",height:"100%"}:"",{"max-width":t.sidebarWidth}],on:{mouseleave:t.onMouseLeave}},[t._t("header"),t._v(" "),i("div",{staticClass:"vsm--list"},t._l(t.menu,function(e,s){return i("item",{key:s,attrs:{item:e,"is-collapsed":t.isCollapsed,"active-show":t.activeShow,"show-one-child":t.showOneChild,"show-child":t.showChild,rtl:t.rtl},on:{"set-mobile-item":t.setMobileItem,"unset-mobile-item":t.unsetMobileItem}},[t._t("dropdown-icon",null,{slot:"dropdown-icon"})],2)}),1),t._v(" "),t.isCollapsed?i("div",{staticClass:"vsm--mobile-item",style:t.mobileItemStyle.item},[t.mobileItem?i("item",{attrs:{item:t.mobileItem,"mobile-item":!0,"is-collapsed":t.isCollapsed,"show-child":t.showChild,rtl:t.rtl}},[t._t("dropdown-icon",null,{slot:"dropdown-icon"})],2):t._e(),t._v(" "),i("transition",{attrs:{name:"slide-animation"}},[t.mobileItem?i("div",{staticClass:"vsm--mobile-bg",style:[{position:"absolute"},{left:"0px"},{right:"0px"},{top:"0px"},{height:t.mobileItemHeight+"px"}]}):t._e()]),t._v(" "),i("div",{staticClass:"vsm--dropdown",style:t.mobileItemStyle.dropdown},[i("transition",{attrs:{name:"expand"},on:{enter:t.expandEnter,afterEnter:t.expandAfterEnter,beforeLeave:t.expandBeforeLeave}},[t.mobileItem&&t.mobileItem.child?i("listItem",{attrs:{items:t.mobileItem.child,"show-child":t.showChild,rtl:t.rtl,"is-collapsed":t.isCollapsed}},[t._t("dropdown-icon",null,{slot:"dropdown-icon"})],2):t._e()],1)],1)],1):t._e(),t._v(" "),t._t("footer"),t._v(" "),t.hideToggle?t._e():i("button",{staticClass:"vsm--toggle-btn",class:{"vsm--toggle-btn_slot":t.$slots["toggle-icon"]},on:{click:t.onToggleClick}},[t._t("toggle-icon")],2)],2)},[],!1,null,null,null);r.options.__file="SidebarMenu.vue";var h=r.exports;i.d(e,"SidebarMenu",function(){return h});e.default={install:function(t){t.component("sidebar-menu",h)}}}])});
+//# sourceMappingURL=vue-sidebar-menu.js.map
 
 /***/ }),
 
@@ -49187,9 +52753,17 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_sidebar_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-sidebar-menu */ "./node_modules/vue-sidebar-menu/dist/vue-sidebar-menu.js");
+/* harmony import */ var vue_sidebar_menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_sidebar_menu__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue_sidebar_menu_dist_vue_sidebar_menu_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-sidebar-menu/dist/vue-sidebar-menu.css */ "./node_modules/vue-sidebar-menu/dist/vue-sidebar-menu.css");
+/* harmony import */ var vue_sidebar_menu_dist_vue_sidebar_menu_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_sidebar_menu_dist_vue_sidebar_menu_css__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -49207,15 +52781,29 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  */
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+//e.component('marhatorzsbevitelitem', require('./components/marhatorzsbevitelitem.vue').default);
 
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('marhatorzsbevitelitem', __webpack_require__(/*! ./components/marhatorzs/marhatorzsbevitelitem.vue */ "./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('marhatorzsupdateitem', __webpack_require__(/*! ./components/marhatorzs/marhatorzsupdateitem.vue */ "./resources/js/components/marhatorzs/marhatorzsupdateitem.vue")["default"]);
+window.events = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
+
+window.flash = function (message) {
+  window.events.$emit('flash', message);
+};
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('flash', __webpack_require__(/*! ./components/marhatorzs/Flash.vue */ "./resources/js/components/marhatorzs/Flash.vue")["default"]); //Vue.component('contact-form', require('./components/ContactForm.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new Vue({
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('sidebarmenu', __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module './components/menu/marhatorzs_menu.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))["default"]);
+var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app'
 });
 
@@ -49279,18 +52867,20 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/js/components/ExampleComponent.vue":
+/***/ "./resources/js/components/marhatorzs/Flash.vue":
 /*!******************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue ***!
+  !*** ./resources/js/components/marhatorzs/Flash.vue ***!
   \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Flash_vue_vue_type_template_id_0034dc36___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Flash.vue?vue&type=template&id=0034dc36& */ "./resources/js/components/marhatorzs/Flash.vue?vue&type=template&id=0034dc36&");
+/* harmony import */ var _Flash_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Flash.vue?vue&type=script&lang=js& */ "./resources/js/components/marhatorzs/Flash.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Flash_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Flash.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/marhatorzs/Flash.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -49298,10 +52888,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Flash_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Flash_vue_vue_type_template_id_0034dc36___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Flash_vue_vue_type_template_id_0034dc36___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -49311,38 +52901,192 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/ExampleComponent.vue"
+component.options.__file = "resources/js/components/marhatorzs/Flash.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
+/***/ "./resources/js/components/marhatorzs/Flash.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/js/components/marhatorzs/Flash.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Flash_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Flash.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/Flash.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Flash_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
+/***/ "./resources/js/components/marhatorzs/Flash.vue?vue&type=style&index=0&lang=css&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/marhatorzs/Flash.vue?vue&type=style&index=0&lang=css& ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Flash_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--7-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Flash.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/Flash.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Flash_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Flash_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Flash_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Flash_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Flash_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/marhatorzs/Flash.vue?vue&type=template&id=0034dc36&":
 /*!*************************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
+  !*** ./resources/js/components/marhatorzs/Flash.vue?vue&type=template&id=0034dc36& ***!
   \*************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Flash_vue_vue_type_template_id_0034dc36___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Flash.vue?vue&type=template&id=0034dc36& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/Flash.vue?vue&type=template&id=0034dc36&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Flash_vue_vue_type_template_id_0034dc36___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Flash_vue_vue_type_template_id_0034dc36___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _marhatorzsbevitelitem_vue_vue_type_template_id_9a1f6958___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./marhatorzsbevitelitem.vue?vue&type=template&id=9a1f6958& */ "./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=template&id=9a1f6958&");
+/* harmony import */ var _marhatorzsbevitelitem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./marhatorzsbevitelitem.vue?vue&type=script&lang=js& */ "./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _marhatorzsbevitelitem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _marhatorzsbevitelitem_vue_vue_type_template_id_9a1f6958___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _marhatorzsbevitelitem_vue_vue_type_template_id_9a1f6958___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/marhatorzs/marhatorzsbevitelitem.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_marhatorzsbevitelitem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./marhatorzsbevitelitem.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_marhatorzsbevitelitem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=template&id=9a1f6958&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=template&id=9a1f6958& ***!
+  \*****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_marhatorzsbevitelitem_vue_vue_type_template_id_9a1f6958___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./marhatorzsbevitelitem.vue?vue&type=template&id=9a1f6958& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/marhatorzsbevitelitem.vue?vue&type=template&id=9a1f6958&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_marhatorzsbevitelitem_vue_vue_type_template_id_9a1f6958___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_marhatorzsbevitelitem_vue_vue_type_template_id_9a1f6958___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/marhatorzs/marhatorzsupdateitem.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/marhatorzs/marhatorzsupdateitem.vue ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _marhatorzsupdateitem_vue_vue_type_template_id_fc36c520___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./marhatorzsupdateitem.vue?vue&type=template&id=fc36c520& */ "./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=template&id=fc36c520&");
+/* harmony import */ var _marhatorzsupdateitem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./marhatorzsupdateitem.vue?vue&type=script&lang=js& */ "./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _marhatorzsupdateitem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _marhatorzsupdateitem_vue_vue_type_template_id_fc36c520___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _marhatorzsupdateitem_vue_vue_type_template_id_fc36c520___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/marhatorzs/marhatorzsupdateitem.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_marhatorzsupdateitem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./marhatorzsupdateitem.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_marhatorzsupdateitem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=template&id=fc36c520&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=template&id=fc36c520& ***!
+  \****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_marhatorzsupdateitem_vue_vue_type_template_id_fc36c520___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./marhatorzsupdateitem.vue?vue&type=template&id=fc36c520& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/marhatorzs/marhatorzsupdateitem.vue?vue&type=template&id=fc36c520&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_marhatorzsupdateitem_vue_vue_type_template_id_fc36c520___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_marhatorzsupdateitem_vue_vue_type_template_id_fc36c520___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
