@@ -118,6 +118,8 @@ body {
   width: 15%;
   top: 110px;
   height: 100%;
+  position: fixed;
+  left: 0px;
   background: transparent;
 }
 .navbar {
